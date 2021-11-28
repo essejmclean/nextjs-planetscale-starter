@@ -5,7 +5,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import superagent from "superagent";
 
-import prisma from "@db";
+import prisma from "@prisma";
 
 const MINIMUM_ACTIVITY_TIMEOUT = 850;
 type LoginFormValues = {
@@ -54,26 +54,26 @@ export default function Page({ csrfToken }) {
   };
 
   return (
-    <div className="min-h-screen  flex flex-col justify-center py-12 sm:px-6 lg:px-8">
+    <div className="sm:px-6 lg:px-8 flex flex-col justify-center min-h-screen py-12">
       <Head>
         <title>Setup</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="sm:mx-auto sm:w-full sm:max-w-md text-center py-12">
+      <div className="sm:mx-auto sm:w-full sm:max-w-md py-12 text-center">
         <img
           className="h-16 mx-auto"
           src="/assets/planet-scale.svg"
           alt="PlanetScale Logo"
         />
       </div>
-      <div className=" flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-md text-center ">
+      <div className=" sm:px-6 lg:px-8 flex flex-col justify-center py-12 mt-8">
+        <div className="sm:mx-auto sm:w-full sm:max-w-md  text-center">
           <p>Welcome to the PlanetScale Next.js Starter App</p>
           <p>Get started by creating an administrative account to setup.</p>
         </div>
-        <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-          <div className="py-8 px-4 mx-2 rounded-sm sm:px-10">
-            <form className=" text-center " onSubmit={handleSubmit(onSubmit)}>
+        <div className="sm:mx-auto sm:w-full sm:max-w-md mt-8">
+          <div className="sm:px-10 px-4 py-8 mx-2 rounded-sm">
+            <form className=" text-center" onSubmit={handleSubmit(onSubmit)}>
               <input
                 name="csrfToken"
                 {...register("csrfToken")}
@@ -84,7 +84,7 @@ export default function Page({ csrfToken }) {
               <div className="">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-neutral-400"
+                  className="text-neutral-400 block text-sm font-medium"
                 >
                   Email address
                 </label>
@@ -96,7 +96,7 @@ export default function Page({ csrfToken }) {
                     autoComplete="email"
                     required
                     {...register("email")}
-                    className="appearance-none w-full font-medium py-3 border-b border-t-0 border-l-0 border-r-0 border-dashed outline-none text-xl text-center leading-6 bg-transparent placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"
+                    className="focus:outline-none focus:placeholder-gray-400 w-full py-3 text-xl font-medium leading-6 text-center placeholder-gray-500 transition duration-150 ease-in-out bg-transparent border-t-0 border-b border-l-0 border-r-0 border-dashed outline-none appearance-none"
                   />
                 </div>
               </div>
@@ -105,7 +105,7 @@ export default function Page({ csrfToken }) {
                 <div className="mt-8">
                   <label
                     htmlFor="password"
-                    className="block text-sm font-medium text-neutral-400"
+                    className="text-neutral-400 block text-sm font-medium"
                   >
                     Password
                   </label>
@@ -119,12 +119,12 @@ export default function Page({ csrfToken }) {
                     minLength={12}
                     required
                     {...register("password")}
-                    className="appearance-none w-full font-medium py-3 border-b border-t-0 border-l-0 border-r-0 border-dashed outline-none text-xl text-center leading-6 bg-transparent placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 transition duration-150 ease-in-out"
+                    className="focus:outline-none focus:placeholder-gray-400 w-full py-3 text-xl font-medium leading-6 text-center placeholder-gray-500 transition duration-150 ease-in-out bg-transparent border-t-0 border-b border-l-0 border-r-0 border-dashed outline-none appearance-none"
                   />
                 </div>
               </div>
 
-              <div className="mt-16 space-y-2 flex justify-center">
+              <div className="flex justify-center mt-16 space-y-2">
                 <button
                   type="submit"
                   disabled={isSubmitting}

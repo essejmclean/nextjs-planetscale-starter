@@ -13,6 +13,10 @@ generator client {
     previewFeatures = ["referentialIntegrity"]
 }
 
+generator nexusPrisma {
+   provider = "nexus-prisma"
+}
+
 model Account {
     id                       String   @id @default(cuid())
     createdAt                DateTime @default(now())
@@ -45,6 +49,7 @@ model Session {
     userId       String?
 }
 
+/// This is a user!
 model User {
     id            String    @id @default(cuid())
     createdAt     DateTime  @default(now())
@@ -52,7 +57,7 @@ model User {
     name          String?
     email         String?   @unique
     password      String?
-    emailVerified DateTime?
+    emailVerified  DateTime?
     image         String?
     role          String?   @default("user")
     accounts      Account[]
