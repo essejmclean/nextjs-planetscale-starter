@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 
 type LoaderProps = {
   className?: string;
@@ -7,13 +7,13 @@ type LoaderProps = {
 const Loader = ({ className, absoluteFill }: LoaderProps) => {
   return (
     <div
-      className={classNames(
+      className={clsx(
         absoluteFill &&
           "absolute w-full h-full flex flex-col justify-center content-center items-center"
       )}
     >
       <img
-        className={classNames("absolute w-6 h-6", className)}
+        className={clsx("absolute w-6 h-6", className)}
         src="/assets/loading.svg"
       />
     </div>

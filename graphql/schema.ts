@@ -10,8 +10,8 @@ export const schema = makeSchema({
   types: [Account, User, ExampleQuery, NexusPrismaScalars],
   plugins: [],
   outputs: {
-    typegen: path.join(process.cwd(), "generated/nexus-typegen.ts"),
-    schema: path.join(process.cwd(), "generated/schema.graphql"),
+    typegen: path.join(process.cwd(), "graphql/nexus-typegen.generated.ts"),
+    schema: path.join(process.cwd(), "graphql/schema.generated.graphql"),
   },
   contextType: {
     module: path.join(process.cwd(), "graphql/context.ts"),

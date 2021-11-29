@@ -3,8 +3,8 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import GitHubProvider from "next-auth/providers/github";
 import { PrismaAdapter } from "@next-auth/prisma-adapter";
 
-import { verifyPassword, hashPassword } from "@lib/auth/passwords";
-import { Session } from "@lib/auth/session";
+import { verifyPassword, hashPassword } from "@utils/auth/passwords";
+import { Session } from "@utils/auth/session";
 import prisma from "@prisma";
 
 export default NextAuth({

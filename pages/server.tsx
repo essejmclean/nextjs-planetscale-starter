@@ -1,6 +1,6 @@
-import AppLayout from "@lib/components/Layouts/AppLayout";
+import AppLayout from "@components/Layouts/AppLayout";
 import { useSession } from "next-auth/react";
-import { getSession } from "@lib/auth/session";
+import { getSession } from "@utils/auth/session";
 
 const Page = () => {
   const { status, data: session } = useSession({

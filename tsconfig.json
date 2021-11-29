@@ -17,12 +17,13 @@
     "baseUrl": ".",
     "paths": {
       "@api/*": ["pages/api/*"],
+      "@components": ["components/index"],
+      "@components/*": ["components/*"],
       "@graphql/*": ["graphql/*"],
-      "@lib/*": ["lib/*"],
-      "@components/*": ["lib/components/*"],
-      "@components": ["lib/components/index"],
+      "@prisma": ["prisma/index"],
       "@prisma/*": ["prisma/*"],
-      "@prisma": ["prisma/index"]
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

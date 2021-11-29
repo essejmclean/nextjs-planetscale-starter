@@ -1,3 +1,7 @@
+/**
+ * @type {import('next').NextConfig}
+ */
+
 if (!process.env.NEXTAUTH_URL) {
   console.warn(
     "\x1b[33mwarn",
@@ -14,12 +18,8 @@ if (!process.env.NEXTAUTH_URL) {
   }
 }
 
-module.exports = {
-  target: "experimental-serverless-trace",
-  future: {
-    webpack5: true,
-  },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
+const nextConfig = {
+  swcMinify: true,
 };
+
+module.exports = nextConfig;

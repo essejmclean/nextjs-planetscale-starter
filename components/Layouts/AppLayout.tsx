@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import clsx from "clsx";
 import { useSession, signOut, signIn } from "next-auth/react";
 import Link from "next/link";
 import { Menu, Transition } from "@headlessui/react";
@@ -98,7 +98,7 @@ const AppLayout = (props) => {
                             {({ active }) => (
                               <a
                                 onClick={() => signOut()}
-                                className={classNames(
+                                className={clsx(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
@@ -112,7 +112,7 @@ const AppLayout = (props) => {
                             {({ active }) => (
                               <a
                                 onClick={() => signIn()}
-                                className={classNames(
+                                className={clsx(
                                   active ? "bg-gray-100" : "",
                                   "block px-4 py-2 text-sm text-gray-700"
                                 )}
@@ -134,7 +134,7 @@ const AppLayout = (props) => {
                   {NAV_ITEMS.map((item) => (
                     <Link key={item.title} href={item.href}>
                       <a
-                        className={classNames(
+                        className={clsx(
                           item.href === currentPath
                             ? "border-b border-indigo-600 text-black"
                             : " hover:border-b  hover:border-gray-200 text-gray-600 ",

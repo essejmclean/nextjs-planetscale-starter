@@ -1,11 +1,12 @@
 import React from "react";
-import type { ExtendedAppProps } from "@lib/types";
+import type { ExtendedAppProps } from "@utils/types";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { SessionProvider } from "next-auth/react";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
+import "inter-ui/inter.css";
 
-import "@lib/styles/index.css";
-import WithAuth from "@lib/auth/WithAuth";
+import "@styles/index.css";
+import WithAuth from "@utils/auth/WithAuth";
 
 export const queryClient = new QueryClient();
 
